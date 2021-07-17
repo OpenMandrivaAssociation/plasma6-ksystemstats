@@ -3,12 +3,14 @@
 
 Name: ksystemstats
 Version: 5.22.3
-Release: 1
+Release: 2
 Source0: http://download.kde.org/%{stable}/plasma/%{plasmaver}/%{name}-%{version}.tar.xz
 Summary: Collect statistics about the running Plasma
 URL: http://kde.org/
 License: GPL
 Group: Graphical desktop/KDE
+# (tpg) https://bugs.kde.org/show_bug.cgi?id=439615
+Patch100: https://invent.kde.org/plasma/ksystemstats/-/merge_requests/8.patch
 BuildRequires: cmake(ECM)
 BuildRequires: cmake(KF5CoreAddons)
 BuildRequires: cmake(KF5DBusAddons)

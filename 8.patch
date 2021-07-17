@@ -1,0 +1,31 @@
+From 70550a94e1752a8adad577574ab3b051088f5a61 Mon Sep 17 00:00:00 2001
+From: David Redondo <kde@david-redondo.de>
+Date: Fri, 9 Jul 2021 14:36:07 +0200
+Subject: [PATCH] Don't crash if there's no input subfeature
+
+Apaprently not all sensors have an "input" subfeature for example
+some can only have an "average" subfeature.
+BUG:439615
+FIXED-IN:5.22.4
+---
+ plugins/lmsensors/SensorsFeatureSensor.cpp | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/plugins/lmsensors/SensorsFeatureSensor.cpp b/plugins/lmsensors/SensorsFeatureSensor.cpp
+index 79f4696..e0865a4 100644
+--- a/plugins/lmsensors/SensorsFeatureSensor.cpp
++++ b/plugins/lmsensors/SensorsFeatureSensor.cpp
+@@ -118,6 +118,10 @@ SensorsFeatureSensor* makeSensorsFeatureSensor(const sensors_chip_name * const c
+         return nullptr;
+     }
+ 
++    if (!valueFeature) {
++        return nullptr;
++    }
++
+     auto sensor = new SensorsFeatureSensor(QString::fromUtf8(feature->name), chipName, valueFeature, parent);
+     sensor->setName(prettyName(chipName, feature));
+     sensor->setUnit(unit);
+-- 
+GitLab
+
