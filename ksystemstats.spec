@@ -2,7 +2,7 @@
 %define stable %([ "$(echo %{version} |cut -d. -f3)" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: ksystemstats
-Version: 5.25.3
+Version: 5.25.4
 Release: 1
 Source0: http://download.kde.org/%{stable}/plasma/%{plasmaver}/%{name}-%{version}.tar.xz
 Summary: Collect statistics about the running Plasma
