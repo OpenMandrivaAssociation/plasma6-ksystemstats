@@ -55,6 +55,8 @@ BuildRequires: pkgconfig(libnl-3.0)
 BuildRequires: pkgconfig(libpcap)
 BuildRequires: pkgconfig(libcap)
 BuildRequires: lm_sensors-devel
+# Prevent pulling in plasma5
+BuildRequires: plasma6-xdg-desktop-portal-kde
 
 %description
 KDE Frameworks 6 system monitoring framework.
