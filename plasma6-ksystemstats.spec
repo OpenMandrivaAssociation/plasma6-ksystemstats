@@ -1,14 +1,14 @@
+%define stable %([ "$(echo %{version} |cut -d. -f2)" -ge 80 -o "$(echo %{version} |cut -d. -f3)" -ge 80 ] && echo -n un; echo -n stable)
 %define plasmaver %(echo %{version} |cut -d. -f1-3)
-%define stable %([ "$(echo %{version} |cut -d. -f3)" -ge 80 ] && echo -n un; echo -n stable)
-%define git 20231103
+#define git 20231103
 
 Name: plasma6-ksystemstats
-Version:	5.240.0
+Version:	5.27.80
 Release:	%{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/plasma/ksystemstats/-/archive/master/ksystemstats-master.tar.bz2#/ksystemstats-%{git}.tar.bz2
 %else
-Source0: http://download.kde.org/%{stable}/plasma/%{plasmaver}/%{name}-%{version}.tar.xz
+Source0: http://download.kde.org/%{stable}/plasma/%{plasmaver}/ksystemstats-%{version}.tar.xz
 %endif
 Summary: KDE Frameworks 6 system monitoring framework
 URL: http://kde.org/
