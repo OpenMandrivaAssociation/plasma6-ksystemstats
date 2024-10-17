@@ -13,7 +13,7 @@ Source0:	https://invent.kde.org/plasma/ksystemstats/-/archive/%{gitbranch}/ksyst
 Source0: http://download.kde.org/%{stable}/plasma/%{plasmaver}/ksystemstats-%{version}.tar.xz
 %endif
 Summary: KDE Frameworks 6 system monitoring framework
-URL: http://kde.org/
+URL: https://kde.org/
 License: GPL
 Group: System/Libraries
 BuildRequires: cmake(Qt6)
